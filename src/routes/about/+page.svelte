@@ -1,26 +1,37 @@
+<script>
+	import skills from '$lib/skills';
+</script>
+
 <svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
+	<title>Seran Shanmugathas - About</title>
+	<meta name="description" content="About Seran Shanmugathas" />
 </svelte:head>
 
-<div class="text-column">
-	<h1>About this app</h1>
-
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<pre>npm create svelte@latest</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
+<div class="max-w-900 p-0 flex justify-center">
+	<main class="max-w-full min-h-500 text-left mx-auto box-border">
+		<h1 class="font-bold text-xl mt-0 mb-5 font-sans text-start">About</h1>
+		<p>
+			I'm a Software developer with over 2 years of front-end development experience, experienced in
+			both enterprise and open-source software development. I'm based in Italy and currently working
+			as a consultant at Junior Consulting. I tend to learn and use the best technology and approach
+			to best solve the problem I'm facing.
+		</p>
+		<h2 class="mt-5">Skills</h2>
+		{#each Object.entries(skills) as [section, technologies]}
+			<ul>
+				<li>
+					<h4>
+						{section}:
+					</h4>
+					<div class="list flex flex-col sm:flex-row gap-5 sm:gap-30">
+						{#each technologies as technology}
+							<div>
+								{technology}
+							</div>
+						{/each}
+					</div>
+				</li>
+			</ul>
+		{/each}
+	</main>
 </div>
