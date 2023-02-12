@@ -4,7 +4,18 @@
 	import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte';
 	// import { modalOpened } from '$lib/store';
 	import { goto } from '$app/navigation';
+	import SvelteSeo from 'svelte-seo';
 </script>
+
+<SvelteSeo
+	openGraph={{
+		title: 'Seran Shanmugathas - Portofolio',
+		description:
+			'I am currently in my third year of study at the Norwegian University of Science and Technology pursuing a degree in M.Sc. Computer Science. In my spare time, I enjoy developing my skills in software development and learning new technologies.',
+		url: 'https://seranshan.no/',
+		type: 'website'
+	}}
+/>
 
 <svelte:head>
 	<title>Seran Shanmugathas - Portofolio</title>
