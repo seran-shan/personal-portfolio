@@ -41,8 +41,8 @@
 				</p>
 				<p>
 					I am currently in my third year of study at the Norwegian University of Science and
-					Technology pursuing a degree in Computer Science. In my spare time, I enjoy developing my
-					skills in software development and learning new technologies.
+					Technology pursuing a degree in M.Sc. Computer Science. In my spare time, I enjoy
+					developing my skills in software development and learning new technologies.
 				</p>
 			</div>
 		</div>
