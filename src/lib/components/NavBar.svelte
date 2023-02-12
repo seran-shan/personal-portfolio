@@ -8,9 +8,7 @@
 
 <div class={opened ? 'NavBar open' : 'NavBar'}>
 	<div class="innerContainer">
-		<a href="/">
-			<img src={Logo} alt="logo" class="logo" />
-		</a>
+		<a href="/"> $ ~/seran-shanmugathas </a>
 		<div class="burger">
 			<Burger bind:open={opened} />
 		</div>
@@ -43,6 +41,7 @@
 		align-items: center !important;
 		height: 330px !important;
 		transition: height 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		backdrop-filter: blur(20px);
 	}
 
 	.selected {
@@ -52,7 +51,7 @@
 
 	.button:hover::after {
 		content: '';
-		background: #ca3c25;
+		background: #efc000;
 		display: block;
 		height: 3px;
 		width: 100%;
@@ -62,7 +61,7 @@
 
 	.button.selected:after {
 		content: '';
-		background: #ca3c25;
+		background: #efc000;
 		display: block;
 		height: 3px;
 		width: 100%;
@@ -96,6 +95,12 @@
 		height: 80px;
 		overflow: hidden;
 		transition: height 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 9999;
+		backdrop-filter: blur(20px);
 	}
 
 	.buttons {

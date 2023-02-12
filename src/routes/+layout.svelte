@@ -13,7 +13,7 @@
 	import routes from '$lib/NavRoutes';
 
 	let copied = false;
-	let email = 'cavallogianmarco@gmail.com';
+	let email = 'seran@live.no';
 	const cookieEnabled = false;
 	$: showCookieModal = false;
 
@@ -95,7 +95,9 @@
 		<Button>Send Email</Button>
 	</div>
 </Modal>
+<!-- <header class="header"> -->
 <Navbar segment={$page.url.pathname} />
+<!-- </header> -->
 
 <slot />
 
@@ -139,7 +141,7 @@
 	:global(body) {
 		background-color: var(--background);
 		background-size: 200% 200%;
-		color: white;
+		color: #c1dbe3;
 		margin: 0;
 		box-sizing: border-box;
 		display: grid;
@@ -155,7 +157,7 @@
 
 	:global(::selection) {
 		color: white;
-		background: #ca3c25;
+		background: #efc000;
 	}
 
 	:global(::-webkit-scrollbar) {
@@ -240,6 +242,11 @@
 		cursor: pointer;
 	}
 
+	.header {
+		width: 100vw;
+		backdrop-filter: blur(20px);
+	}
+
 	footer {
 		font-size: 16px;
 		font-weight: 400;
@@ -254,11 +261,11 @@
 		color: #4158d0;
 	}
 	footer .svelte {
-		color: #ff3e00;
+		color: #efc000;
 	}
 
 	footer .me {
-		color: #ff3e00;
+		color: #efc000;
 	}
 
 	@media (min-width: 900px) {

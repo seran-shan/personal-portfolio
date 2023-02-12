@@ -9,10 +9,7 @@
 <div class="projectContainer">
 	<div class="projects">
 		<h1>Projects</h1>
-		<p class="note">
-			Note: most of my projects are under NDA so I am unable to share those projects. If there is
-			anything you would like to see further, please feel free to contact me.
-		</p>
+
 		{#each projects as project}
 			<div class="project">
 				<div class="header">
