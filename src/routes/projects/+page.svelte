@@ -9,7 +9,6 @@
 <div class="projectContainer">
 	<div class="projects">
 		<h1>Projects</h1>
-
 		{#each projects as project}
 			<div class="project">
 				<div class="header">
@@ -49,13 +48,6 @@
 		text-align: center;
 	}
 
-	.note {
-		opacity: 0.5;
-		margin: 0;
-		max-width: 900px;
-		text-align: left;
-	}
-
 	a {
 		text-decoration: none;
 	}
@@ -85,10 +77,11 @@
 		color: white;
 		background: #111;
 		padding: 2rem;
-		width: 100%;
+		width: 100vw;
 		border-radius: 5px;
 		transition: transform 0.2s ease-in-out;
 		border-radius: 25px;
+		overflow-wrap: break-word;
 	}
 
 	.project p {
@@ -109,12 +102,15 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 10px;
+		overflow-wrap: break-word;
 	}
 
 	.techs {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		overflow-wrap: break-word;
+		margin-right: 30px;
 	}
 	.techs > div {
 		margin: 0 0 0 10px;
@@ -147,6 +143,10 @@
 		}
 		.button {
 			max-width: 200px;
+		}
+
+		.project {
+			width: 100%;
 		}
 	}
 

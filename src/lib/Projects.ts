@@ -1,23 +1,46 @@
 const projects = [
 	{
-		title: 'GDLauncher',
-		technologies: ['Node', 'React', 'Redux', 'Electron'],
-		description:
-			'GDLauncher is a simple, yet powerful Minecraft custom launcher with a strong focus on the user experience',
-		url: 'https://github.com/gorilla-devs/GDLauncher'
+		title: 'Company landing page',
+		technologies: ['NextJs', 'TailwindCss'],
+		description: 'Created the landing page for Vext Consulting.',
+		url: 'https://vextconsulting.no'
 	},
 	{
-		title: 'WiseMan Discord Bot',
-		technologies: ['NodeJs', 'FireBase', 'MongoDb', 'golang'],
-		description:
-			'The wiseMan bot allows you to level up based on the time you spend in a vocal channel',
-		url: 'https://github.com/Ladvace/WiseMan-DiscordBot'
+		title: 'Check-in solution',
+		technologies: ['Expo', 'Sentry', 'Express', 'Redux'],
+		description: 'The solution is used by the crew training company to check in their customers.',
+		url: 'https://www.crewtrening.no'
 	},
 	{
-		title: 'Easy-react-carousel',
-		technologies: ['React', 'NodeJs'],
-		description: 'A simple carousel made in reactjs',
-		url: 'https://github.com/Ladvace/easy-react-carousel'
+		title: 'Booking solution',
+		technologies: ['NextJS', 'Zustad', 'Render', 'Adyen'],
+		description: 'Created a booking app for Pinpin a compnay by Jubel.',
+		url: 'https://pinpin.no'
+	},
+	{
+		title: 'Predict property value',
+		technologies: ['Confidential'],
+		description: 'Trained a machine learning model to predict the value of properties in Norway.',
+		url: ''
+	},
+	{
+		title: 'Show cheapest electricity prices',
+		technologies: [],
+		description:
+			'Created a solution for Motkraft that shows the cheapest electricity prices based on relative time.',
+		url: 'https://motkraft.no'
+	},
+	{
+		title: 'Case page',
+		technologies: ['NextJs', 'Scss'],
+		description: 'Created a landing page for a Webstep that showcases some of their projects.',
+		url: 'https://webstep.no'
+	},
+	{
+		title: 'Mobile app',
+		technologies: ['Expo', 'Redux', 'TypeScript'],
+		description: 'Created a mobile app for TkMidt that is used to cure dental fear.',
+		url: 'https://tkmidt.no'
 	}
 ];
 
