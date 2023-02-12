@@ -2,19 +2,21 @@
 	import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
 	import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
 	import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte';
-	import { modalOpened } from '$lib/store';
+	// import { modalOpened } from '$lib/store';
+	import { goto } from '$app/navigation';
 </script>
 
 <svelte:head>
 	<title>Seran Shanmugathas - Portofolio</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Seran Shanmugathas - Portofolio" />
 </svelte:head>
 <main>
 	<h1>Hi!✋ <br /> I'm Seran Shanmugathas a Software Developer 💻 based in Norway</h1>
 	<div class="icons">
 		<div
 			on:click={() => {
-				modalOpened.set(true);
+				goto('mailto:seran@live.no');
+				console.log('clicked');
 			}}
 		>
 			<div class="icon">
