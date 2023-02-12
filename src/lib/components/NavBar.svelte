@@ -1,29 +1,38 @@
 <script lang="ts">
 	import Burger from './Hamburger.svelte';
-	import Logo from '$lib/assets/logo.svg';
 	import routes from '$lib/NavRoutes';
 	let opened = false;
 	export let segment: string;
+
+	function handleLinkClick(event: Event) {
+		opened = false;
+	}
 </script>
 
 <div class={opened ? 'NavBar open' : 'NavBar'}>
 	<div class="innerContainer">
-		<a href="/"> $ ~/seran-shanmugathas </a>
+		<a href="/" style="color: #efc000"> $ ~/seran-shanmugathas </a>
 		<div class="burger">
 			<Burger bind:open={opened} />
 		</div>
 		<div class="buttons">
 			{#each routes as route}
-				<a class={`button ${segment === route.href ? 'selected' : ''}`} href={route.href}
-					>{route.label}</a
+				<a
+					class={`button ${segment === route.href ? 'selected' : ''}`}
+					href={route.href}
+					on:click={handleLinkClick}
+				>
+					{route.label}</a
 				>
 			{/each}
 		</div>
 	</div>
 	<div class="responsiveButtons buttons">
 		{#each routes as route}
-			<a class={`button ${segment === route.href ? 'selected' : ''}`} href={route.href}
-				>{route.label}</a
+			<a
+				class={`button ${segment === route.href ? 'selected' : ''}`}
+				href={route.href}
+				on:click={handleLinkClick}>{route.label}</a
 			>
 		{/each}
 	</div>

@@ -102,7 +102,7 @@
 <slot />
 
 <footer>
-	Powered with ❤️ by <a class="me" href="/about">Seran</a> in
+	Powered with ❤️ by <span class="me">Seran</span> in
 	<span class="svelte">Svelte</span>
 </footer>
 
@@ -163,16 +163,6 @@
 	:global(::-webkit-scrollbar) {
 		width: 8px;
 		height: 8px;
-		border-radius: 1px;
-	}
-
-	:global(::-webkit-scrollbar-thumb) {
-		background-color: #fafffd;
-		border-radius: 3px;
-	}
-
-	:global(::-webkit-scrollbar-track) {
-		background-color: transparent;
 		border-radius: 1px;
 	}
 
@@ -259,6 +249,7 @@
 	footer a {
 		text-decoration: none;
 		color: #4158d0;
+		font-size: x-small;
 	}
 	footer .svelte {
 		color: #efc000;
@@ -271,6 +262,10 @@
 	@media (min-width: 900px) {
 		:global(.tooltip) {
 			visibility: visible;
+		}
+
+		footer {
+			font-size: medium;
 		}
 	}
 	@media (min-width: 600px) {
