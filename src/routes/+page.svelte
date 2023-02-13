@@ -9,7 +9,7 @@
 
 <SvelteSeo
 	openGraph={{
-		title: 'Seran Shanmugathas - Portofolio',
+		title: 'Seran Shanmugathas - Portfolio',
 		description:
 			'I am currently in my third year of study at the Norwegian University of Science and Technology pursuing a degree in M.Sc. Computer Science. In my spare time, I enjoy developing my skills in software development and learning new technologies.',
 		url: 'https://seranshan.no/',
@@ -18,8 +18,8 @@
 />
 
 <svelte:head>
-	<title>Seran Shanmugathas - Portofolio</title>
-	<meta name="description" content="Seran Shanmugathas - Portofolio" />
+	<title>Seran Shanmugathas - Portfolio</title>
+	<meta name="description" content="Seran Shanmugathas - Portfolio" />
 </svelte:head>
 <main>
 	<h1>Hi!✋ <br /> I'm Seran Shanmugathas a Software Developer 💻 based in Norway</h1>
