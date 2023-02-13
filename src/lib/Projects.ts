@@ -14,7 +14,7 @@ const projects = [
 	{
 		title: 'Booking solution',
 		technologies: ['NextJS', 'Zustad', 'Render', 'Adyen'],
-		description: 'Created a booking app for Pinpin a compnay by Jubel.',
+		description: 'Created a booking app for Pinpin a company by Jubel.',
 		url: 'https://pinpin.no'
 	},
 	{
