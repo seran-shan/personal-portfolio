@@ -2,9 +2,9 @@
 	import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
 	import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
 	import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte';
-	// import { modalOpened } from '$lib/store';
 	import { goto } from '$app/navigation';
 	import SvelteSeo from 'svelte-seo';
+	import seran from '$lib/images/seran.jpg';
 </script>
 
 <SvelteSeo
@@ -22,39 +22,50 @@
 	<meta name="description" content="Seran Shanmugathas - Portfolio" />
 </svelte:head>
 <main>
-	<h1>Hi!✋ <br /> I'm Seran Shanmugathas a Software Developer 💻 based in Norway</h1>
-	<div class="icons">
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div
-			on:click={() => {
-				goto('mailto:seran@live.no');
-			}}
-		>
-			<div class="icon">
-				<FaEnvelope />
+	<div class="container">
+		<div class="about">
+			<h1 class="header">Hi!✋ I'm Seran Shanmugathas</h1>
+			<p class="paragraph">
+				Software Developer 💻 based in Norway. Currently in my third year of study at the Norwegian
+				University of Science and Technology pursuing a degree in M.Sc. Computer Science.
+			</p>
+			<div class="icons">
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<div
+					on:click={() => {
+						goto('mailto:seran@live.no');
+					}}
+				>
+					<div class="icon">
+						<FaEnvelope />
+					</div>
+				</div>
+
+				<a
+					href="https://github.com/seran-shan"
+					aria-label="GitHub"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<div class="icon">
+						<FaGithub />
+					</div>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/seran-shanmugathas/"
+					aria-label="Linkedin"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<div class="icon">
+						<FaLinkedin />
+					</div>
+				</a>
 			</div>
 		</div>
-
-		<a
-			href="https://github.com/seran-shan"
-			aria-label="GitHub"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<div class="icon">
-				<FaGithub />
-			</div>
-		</a>
-		<a
-			href="https://www.linkedin.com/in/seran-shanmugathas/"
-			aria-label="Linkedin"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<div class="icon">
-				<FaLinkedin />
-			</div>
-		</a>
+		<div class="image-container">
+			<img src={seran} class="image" alt="Seran Shanmugathas" />
+		</div>
 	</div>
 </main>
 
@@ -71,7 +82,6 @@
 
 		display: flex;
 		flex-direction: column;
-		height: calc(100vh - 80px - 88px);
 		justify-content: center;
 		align-items: center;
 	}
@@ -85,16 +95,39 @@
 		font-size: 36px;
 	}
 
+	.container {
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		align-items: center;
+	}
+
+	.about {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 900px;
+	}
+
+	.header {
+		width: 100%;
+		text-align: left;
+	}
+
+	.paragraph {
+		text-align: left;
+		margin: 0;
+		max-width: 800px;
+		margin-right: 20px;
+	}
+
 	.icons {
 		display: flex !important;
-		justify-content: center !important;
 		align-items: center;
 		gap: 20px;
 		cursor: pointer;
 		font-size: 30px;
 		display: flex;
 		justify-content: space-between;
-		max-width: 200px;
 		margin: 50px auto 0;
 	}
 
@@ -107,6 +140,12 @@
 		color: #efc000;
 	}
 
+	.image {
+		width: 200px;
+		height: 200px;
+		border-radius: 10px;
+	}
+
 	@media (min-width: 900px) {
 		main > h1 {
 			font-size: 48px;
@@ -116,6 +155,42 @@
 	@media (min-width: 600px) {
 		main {
 			max-width: none;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.container {
+			grid-template-rows: 1fr 2fr;
+			grid-template-columns: none;
+			margin-top: 15vh;
+		}
+
+		.about {
+			grid-row: 2;
+		}
+
+		.about {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
+
+		.header {
+			width: 90%;
+			text-align: center;
+			font-size: large;
+		}
+
+		.paragraph {
+			text-align: center;
+			width: 80%;
+			margin-right: 0;
+			font-size: small;
+		}
+
+		.image {
+			grid-row: 1;
 		}
 	}
 </style>
