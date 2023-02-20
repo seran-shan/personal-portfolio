@@ -24,10 +24,10 @@
 <main>
 	<h1>Hi!✋ <br /> I'm Seran Shanmugathas a Software Developer 💻 based in Norway</h1>
 	<div class="icons">
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div
 			on:click={() => {
 				goto('mailto:seran@live.no');
-				console.log('clicked');
 			}}
 		>
 			<div class="icon">
