@@ -1,21 +1,7 @@
 <script lang="ts">
 	import Navbar from '$lib/components/NavBar.svelte';
-	import Button from '$lib/components/Button.svelte';
-	import FaCopy from 'svelte-icons/fa/FaCopy.svelte';
-	import Tooltip from '$lib/components/Tooltip.svelte';
-	import CopyClipBoard from '$lib/components/CopyToClipBoard.svelte';
-	import { beforeNavigate } from '$app/navigation';
-
 	import { page } from '$app/stores';
-	import Modal from '$lib/components/Modal.svelte';
-	import { onMount } from 'svelte';
 	import { customBackground } from '$lib/store';
-	import routes from '$lib/NavRoutes';
-
-	let copied = false;
-	let email = 'seran@live.no';
-	const cookieEnabled = false;
-	$: showCookieModal = false;
 
 	const cssVariables = (node: HTMLElement, variables: Record<string, string>) => {
 		setCssVariables(node, variables);
@@ -32,69 +18,10 @@
 			node.style.setProperty(`--${name}`, variables[name]);
 		}
 	};
-
-	const copy = () => {
-		const app = new CopyClipBoard({
-			// @ts-ignore
-			target: document.getElementById('clipboard'),
-			props: { email }
-		});
-		app.$destroy();
-	};
-
-	onMount(() => {
-		const showCookie = localStorage.getItem('showCookieModal');
-		if (showCookie !== null) showCookieModal = JSON.parse(showCookie);
-		else showCookieModal = true;
-	});
 </script>
 
 <svelte:body use:cssVariables={{ background: $customBackground }} />
 
-{#if showCookieModal && cookieEnabled}
-	<div class="cookieContainer">
-		<p>🍪 This website use <a href="privacy-policy">Cookies.</a></p>
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div
-			on:click={() => {
-				showCookieModal = false;
-				localStorage.setItem('showCookieModal', 'false');
-			}}
-		>
-			&#10005;
-		</div>
-	</div>
-{/if}
-
-<Modal>
-	<div slot="content" class="modalContainer">
-		<h1>Email:</h1>
-		<div>
-			<p>{email}</p>
-			&nbsp;
-			<div class="tooltip">
-				<Tooltip tooltip={copied}>
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<div
-						id="clipboard"
-						on:click={() => {
-							copied = true;
-							copy();
-							setTimeout(() => {
-								copied = false;
-							}, 500);
-						}}
-					>
-						<div>
-							<FaCopy />
-						</div>
-					</div>
-				</Tooltip>
-			</div>
-		</div>
-		<Button>Send Email</Button>
-	</div>
-</Modal>
 <!-- <header class="header"> -->
 <Navbar segment={$page.url.pathname} />
 <!-- </header> -->
@@ -180,56 +107,8 @@
 		text-decoration: none;
 	}
 
-	a {
-		color: rgb(0, 100, 200);
-		text-decoration: none;
-	}
-
-	a:hover {
-		text-decoration: underline;
-	}
-
-	a:visited {
-		color: rgb(0, 80, 160);
-	}
-
-	.modalContainer div {
-		display: flex;
-		margin-bottom: 20px;
-	}
-
-	.modalContainer p {
-		margin: 0;
-	}
-
 	:global(.tooltip) {
 		visibility: hidden;
-	}
-
-	.cookieContainer {
-		background: white;
-		border-radius: 0px;
-		text-align: center;
-		width: 100%;
-		height: 30px;
-		color: black;
-		padding: 30px;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		position: fixed;
-		bottom: 0px;
-		left: 0;
-		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.cookieContainer > p > a {
-		text-decoration: underline;
-	}
-
-	.cookieContainer > div {
-		cursor: pointer;
 	}
 
 	.header {
@@ -266,26 +145,6 @@
 
 		footer {
 			font-size: medium;
-		}
-	}
-	@media (min-width: 600px) {
-		.cookieContainer {
-			background: white;
-			border-radius: 50px;
-			text-align: center;
-			width: 350px;
-			height: 30px;
-			color: black;
-			padding: 0 10px;
-			display: flex;
-			justify-content: space-evenly;
-			align-items: center;
-			position: fixed;
-			bottom: 50px;
-			left: 0;
-			right: 0;
-			margin-left: auto;
-			margin-right: auto;
 		}
 	}
 </style>
