@@ -38,7 +38,6 @@
 <style>
 	.projectContainer {
 		width: 100%;
-		max-width: 900px;
 		display: flex;
 		justify-content: center;
 		box-sizing: border-box;
@@ -77,7 +76,6 @@
 		color: white;
 		background: #111;
 		padding: 2rem;
-		width: 100vw;
 		border-radius: 5px;
 		transition: transform 0.2s ease-in-out;
 		border-radius: 25px;
@@ -128,6 +126,7 @@
 	@media (min-width: 900px) {
 		.projectContainer {
 			padding: 0;
+			max-width: 900px;
 		}
 		.projects > h1 {
 			font-size: 48px;
